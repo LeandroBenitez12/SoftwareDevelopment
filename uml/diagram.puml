@@ -20,6 +20,7 @@ class Flight{
     passengers;
     airCrews;
     plane;
+    departDateTime;
     departure;
     destination;
 }
@@ -33,19 +34,25 @@ class AirCrew{
     type;
     name;
     surname;
+    airline;
 }
-
+class flightPath{
+    flights;
+    layovers;
+}
 class Layover{
     airport;
     durationAproxInMin;
 }
-City -> Airport: *
+
 Flight -> Airport
 Flight -> Passenger: *
 Flight -> AirCrew: *
-Fligth -> AirPlane
+Flight -> AirPlane
 Airline -> Flight: *
 AirCrew -> Airline
-
+flightPath -> Flight: *
+flightPath -> Layover: *
+City -> Airport: *
 
 @enduml
