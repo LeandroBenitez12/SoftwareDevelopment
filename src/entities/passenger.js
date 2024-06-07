@@ -11,5 +11,16 @@ export class Passenger {
   cantJourneys() {
     return this.journeys.length;
   }
+
+  cantVecesQueVisitaste( unaCiudad ){
+    //consideramos que un pas visito una ciudad
+    // si parte de un aero que estaba en esa ciudad
+
+    return this.
+  }
+
+  
+
+
 }
 //testear

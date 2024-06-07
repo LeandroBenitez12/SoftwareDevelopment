@@ -12,5 +12,14 @@ export class City {
   cantAirport() {
     return this.airports.length;
   }
+  cantPasajeLlegaronEl(dia){
+    let cantidad = 0;
+
+    this.airports.forEach(a => {
+      a.amountFlightsArrivedInTheDay(dia).forEach(v =>{
+        cantidad += v.cantidadPasajeros();
+      });
+    });
+  }
 }
 // testear

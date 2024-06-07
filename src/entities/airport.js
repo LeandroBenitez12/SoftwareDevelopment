@@ -33,4 +33,8 @@ export class Airport {
   cantidadEscalas(){
     return this.layovers.length;
   }
+
+  cantidadPasajeros(){
+    
+  }
 }
