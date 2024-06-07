@@ -1,6 +1,7 @@
 export class Flight {
   passengers;
   airCrews;
+  durationAproxInMinutes;
   constructor(plane, departure, destination, departdatetime) {
     this.plane = plane;
     this.departure = departure;
@@ -9,6 +10,7 @@ export class Flight {
     this.passengers = [];
     this.airCrews = [];
   }
+  
   addPassenger(passenger) {
     this.passengers.push(passenger);
   }

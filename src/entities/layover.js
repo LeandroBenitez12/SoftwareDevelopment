@@ -1,6 +1,6 @@
 export class Layover {
-  constructor(airport, durationAproxInMin) {
+  constructor(airport, durationAproxInMinutes) {
     this.airport = airport;
-    this.durationAproxInMin = durationAproxInMin;
+    this.durationAproxInMinutes = durationAproxInMinutes;
   }
 }
