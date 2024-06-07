@@ -9,8 +9,10 @@ test("introduzco 4 pasajeros en un avion de capacidad 100 y me deberia retornar 
   const maria = new Passenger("maria", "escobar");
   const mariano = new Passenger("mariano", "escobar");
   const flightToBresh = new Flight(avion777, "Ezeiza", "Bresh", 202406071400);
-  flightToBresh.passengers = [eze, ese, maria, mariano];
-
+  flightToBresh.addPassenger(eze);
+  flightToBresh.addPassenger(ese);
+  flightToBresh.addPassenger(maria);
+  flightToBresh.addPassenger(mariano);
   const capacidad = flightToBresh.capacityOccupiedByPassengers();
 
   const percentageExpected = 4;

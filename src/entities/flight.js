@@ -9,7 +9,9 @@ export class Flight {
     this.passengers = [];
     this.airCrews = [];
   }
-
+  addPassenger(passenger) {
+    this.passengers.push(passenger);
+  }
   capacityOccupiedByPassengers() {
     return (this.passengers.length / this.plane.capacity) * 100;
   }
