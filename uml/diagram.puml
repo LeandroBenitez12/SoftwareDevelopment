@@ -5,10 +5,12 @@ class Airport{
 }
 class City{
     name;
+    airports;
 }
 
 class AirPlane{
     capacity;
+    description;
 }
 
 class Airline{
@@ -18,7 +20,7 @@ class Flight{
     passengers;
     airCrews;
     plane;
-   
+    departure;
     destination;
 }
 
@@ -33,15 +35,11 @@ class AirCrew{
     surname;
 }
 
-class FlightPath{
-    
-}
-
 class Layover{
     airport;
     durationAproxInMin;
 }
-City -> Airport
+City -> Airport: *
 Flight -> Airport
 Flight -> Passenger: *
 Flight -> AirCrew: *
