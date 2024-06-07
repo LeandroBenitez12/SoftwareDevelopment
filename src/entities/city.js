@@ -1,7 +1,7 @@
 export class City {
-  airport;
+  airports;
   constructor(name) {
     this.name = name;
-    this.airport = [];
+    this.airports = [];
   }
 }
