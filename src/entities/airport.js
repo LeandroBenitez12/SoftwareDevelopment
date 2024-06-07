@@ -29,4 +29,8 @@ export class Airport {
     return this.flightsToArrivedHere().filter((f) => f.llegasteEnFecha(fecha))
       .length;
   }
+
+  cantidadEscalas(){
+    return this.layovers.length;
+  }
 }
