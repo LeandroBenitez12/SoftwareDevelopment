@@ -23,7 +23,7 @@ test("3 vuelos llegan a el aeropuerto el dia 10-10-10", () => {
   expect(countArrivedFlights).toBe(3);
 });
 
-test("3 vuelos salen del aeropuerto el dia 10-10-10", () => {
+test("2 vuelos salen del aeropuerto el dia 10-10-10", () => {
   const flight = new Flight();
   const flightTwo = new Flight();
   const flightThree = new Flight();
