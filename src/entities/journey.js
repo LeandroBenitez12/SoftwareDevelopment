@@ -11,6 +11,7 @@ export class Journey {
   }
 
   durationFlights() {
+    // i get the duration total of the flights
     let durationTotalFlights = 0;
     this.flights.forEach((f) => {
       durationTotalFlights += f.flightDuration;
@@ -19,6 +20,7 @@ export class Journey {
   }
 
   durationScales() {
+    // i get the duration total of the scales
     let durationTotalScales = 0;
     this.scales.forEach((s) => {
       durationTotalScales += s.scaleDuration;
@@ -27,6 +29,7 @@ export class Journey {
   }
 
   durationTotalJourney() {
+    // i get the duration total of the journey
     return this.durationScales() + this.durationFlights();
   }
 }
