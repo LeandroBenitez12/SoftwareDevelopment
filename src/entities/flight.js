@@ -5,6 +5,7 @@ export class Flight {
   airline;
   departureDateTime;
   arrivalDateTime;
+  flightDuration;
   passengersFlight = [];
   airportCrew = [];
 
