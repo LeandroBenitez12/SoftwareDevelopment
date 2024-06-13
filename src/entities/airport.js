@@ -1,18 +1,18 @@
 export class Airport {
   flights;
-  layovers;
+  scales;
   name;
   constructor() {
     this.flights = [];
-    this.layover = [];
+    this.scales = [];
   }
 
   addFlights(flight) {
     this.flights.push(flight);
   }
 
-  addLayovers(layover) {
-    this.layovers.push(layover);
+  addScales(scale) {
+    this.scales.push(scale);
   }
 
   countArrivedFlights() {
@@ -41,5 +41,9 @@ export class Airport {
       return af.departureDateTime == day;
     });
     return flightInDay.length;
+  }
+
+  getCountScales() {
+    return this.scales.length;
   }
 }

@@ -1,11 +1,11 @@
-export class RankeadorDeAeropuertos {
-  aeropuertosConMenorCantDeEscalas(aeropuertos) {
+export class RankerAirports {
+  airportsWithFewestStops(aeropuertos) {
     let aeropuertoConMenorEscalas;
     let cantMenorEscalas = 9999999999999;
 
     aeropuertos.forEach((a) => {
-      if (a.cantidadEscalas() < cantMenorEscalas) {
-        cantMenorEscalas = a.cantidadEscalas();
+      if (a.getCountScales() < cantMenorEscalas) {
+        cantMenorEscalas = a.getCountScales();
         aeropuertoConMenorEscalas = a;
       }
     });
