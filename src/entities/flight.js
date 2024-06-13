@@ -1,40 +1,23 @@
 export class Flight {
-  passengers;
-  airCrews;
-  airport;
-  durationAproxInMinutes;
-  fechaHoraLlegada;
-  fechaHoraSalida;
-  constructor(plane, departure, destination, departdatetime) {
-    this.plane = plane;
-    this.departure = departure;
-    this.destination = destination;
-    this.departdatetime = departdatetime;
-    this.passengers = [];
-    this.airCrews = [];
-  }
+  airplane;
+  departureAirport;
+  arrivalAirport;
+  airline;
+  departureDateTime;
+  arrivalDateTime;
+  passengersFlight = [];
+  airportCrew = [];
 
   addPassenger(passenger) {
-    this.passengers.push(passenger);
-  }
-  capacityOccupiedByPassengers() {
-    return (this.passengers.length / this.plane.capacity) * 100;
+    this.passengersFlight.push(passenger);
   }
 
-  youLeftFrom(anAirport) {
-    return (this.departure = anAirport);
+  setAirplane(plane) {
+    this.airplane = plane;
   }
 
-  youArriveTo(anAirport) {
-    return (this.destination = anAirport);
-  }
-  salisteEnFecha(fecha) {
-    return this.fechaHoraSalida == fecha;
-  }
-  llegasteEnFecha(fecha) {
-    return this.fechaHoraLlegada == fecha;
-  }
-  cantidadPasajeros() {
-    this.passengers.length;
+  capacityFlightTotal() {
+    // this calculate the number of passengers on a flight
+    return (this.passengersFlight.length / this.airplane.capacity) * 100;
   }
 }

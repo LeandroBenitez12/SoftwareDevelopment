@@ -1,21 +1,21 @@
+import { Flight } from "../../src/entities/flight";
 import { Airplane } from "../../src/entities/airplane";
 import { Passenger } from "../../src/entities/passenger";
-import { Flight } from "../../src/entities/flight";
 
-test("introduzco 4 pasajeros en un avion de capacidad 100 y me deberia retornar 4 por el porcentaje de capacidad de asientos ocupaodos", () => {
-  const avion777 = new Airplane(100);
-  const eze = new Passenger("ezequiel", "escobar");
-  const ese = new Passenger("esequiel", "escobar");
-  const maria = new Passenger("maria", "escobar");
-  const mariano = new Passenger("mariano", "escobar");
-  const flightToBresh = new Flight(avion777, "Ezeiza", "Bresh", 202406071400);
-  flightToBresh.addPassenger(eze);
-  flightToBresh.addPassenger(ese);
-  flightToBresh.addPassenger(maria);
-  flightToBresh.addPassenger(mariano);
-  const capacidad = flightToBresh.capacityOccupiedByPassengers();
+test("the flight has three passenger of 100 available, so 3 percentage of capacity", () => {
+  const anAirplane = new Airplane(100);
+  const passengerOne = new Passenger("Leandro", "Benitez");
+  const passengerTwo = new Passenger("Juan", "Benitez");
+  const passengerThree = new Passenger("Juana", "Benitez");
 
-  const percentageExpected = 4;
+  const anFlight = new Flight();
+  anFlight.setAirplane(anAirplane);
+  anFlight.addPassenger(passengerOne);
+  anFlight.addPassenger(passengerTwo);
+  anFlight.addPassenger(passengerThree);
 
-  expect(capacidad).toBe(percentageExpected);
+  let flightCapacity = anFlight.capacityFlightTotal();
+
+  const capacityExpected = 3;
+  expect(flightCapacity).toBe(capacityExpected);
 });
