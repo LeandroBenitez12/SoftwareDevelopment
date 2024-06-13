@@ -1,11 +1,12 @@
 export class Airport {
   flights;
   layovers;
-  constructor(name) {
-    this.name = name;
+  name;
+  constructor() {
     this.flights = [];
     this.layover = [];
   }
+
   addFlights(flight) {
     this.flights.push(flight);
   }
@@ -14,27 +15,31 @@ export class Airport {
     this.layovers.push(layover);
   }
 
-  flightsToDepartedOfMe() {
-    return this.flights.filter((f) => f.youLeftFrom(this));
-  }
-  flightsToArrivedHere() {
-    return this.flights.filter((f) => f.youArriveTo(this));
-  }
-  amountFlightsDeparturedInTheDay(fecha) {
-    return this.flightsToDepartedOfMe().filter((f) => f.salisteEnFecha(fecha))
-      .length;
+  countArrivedFlights() {
+    const arrivedFlights = this.flights.filter((f) => {
+      return f.arrivalAirport == this;
+    });
+    return arrivedFlights;
   }
 
-  amountFlightsArrivedInTheDay(fecha) {
-    return this.flightsToArrivedHere().filter((f) => f.llegasteEnFecha(fecha))
-      .length;
+  getCountArrivedFlights(day) {
+    const flightInDay = this.countArrivedFlights().filter((af) => {
+      return af.arrivalDateTime == day;
+    });
+    return flightInDay.length;
   }
 
-  cantidadEscalas(){
-    return this.layovers.length;
+  countDepartureFlights() {
+    const DepartureFlights = this.flights.filter((f) => {
+      return f.departureAirport == this;
+    });
+    return DepartureFlights;
   }
 
-  cantidadPasajeros(){
-    
+  getCountDepartureFlights(day) {
+    const flightInDay = this.countDepartureFlights().filter((af) => {
+      return af.departureDateTime == day;
+    });
+    return flightInDay.length;
   }
 }

@@ -13,8 +13,24 @@ export class Flight {
     this.passengersFlight.push(passenger);
   }
 
-  setAirplane(plane) {
-    this.airplane = plane;
+  setAirplane(airplane) {
+    this.airplane = airplane;
+  }
+
+  setArrivalAirport(anAirport) {
+    this.arrivalAirport = anAirport;
+  }
+
+  setArrivalDateTime(DateTime) {
+    this.arrivalDateTime = DateTime;
+  }
+
+  setDepartureAirport(anAirport) {
+    this.departureAirport = anAirport;
+  }
+
+  setDepartureDateTime(DateTime) {
+    this.departureDateTime = DateTime;
   }
 
   capacityFlightTotal() {
