@@ -21,5 +21,5 @@ test("agrego 2 aeropuerto uno con 1 escala el otro con 2, el ranker de airport m
     otherAirport,
   ]);
 
-  expect(aeropuertoconmenorvuelosdeescala.name).toBe(anAirport.name);
+  expect(aeropuertoconmenorvuelosdeescala).toBe(anAirport);
 });
