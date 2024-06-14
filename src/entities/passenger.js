@@ -1,26 +1,23 @@
 export class Passenger {
-  journeys = [];
+  flights = [];
   constructor(name, surname) {
     this.name = name;
     this.surname = surname;
   }
 
-  addJourney(journey) {
-    this.journeys.push(journey);
+  addFlight(flight) {
+    this.flights.push(flight);
   }
-  cantJourneys() {
-    return this.journeys.length;
-  }
-
-  cantVecesQueVisitaste( unaCiudad ){
-    //consideramos que un pas visito una ciudad
-    // si parte de un aero que estaba en esa ciudad
-
-    //return this.
+  countFlights() {
+    return this.flights.length;
   }
 
-  
-
-
+  cantVecesQueVisitaste(aCity) {
+    //Consideramos que un pasajero visitó una ciudad
+    //si partió de un aeropuerto que estaba en esa ciudad
+    return this.flights.filter((j) =>
+      aCity.tenesAeropuerto(j.departureAirport)
+    ).length;
+  }
 }
 //testear

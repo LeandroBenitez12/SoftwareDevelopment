@@ -9,7 +9,7 @@ export class City {
     this.airports.push(airport);
   }
 
-  cantAirport() {
+  countAirports() {
     return this.airports.length;
   }
   cantPasajeLlegaronEl(dia){
