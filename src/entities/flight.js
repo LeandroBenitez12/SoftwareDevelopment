@@ -13,6 +13,9 @@ export class Flight {
     this.passengersFlight.push(passenger);
   }
 
+  countPassengers() {
+    return this.passengersFlight.length;
+  }
   setAirplane(airplane) {
     this.airplane = airplane;
   }
@@ -35,6 +38,6 @@ export class Flight {
 
   capacityFlightTotal() {
     // this calculate the number of passengers on a flight
-    return (this.passengersFlight.length / this.airplane.capacity) * 100;
+    return (this.countPassengers() / this.airplane.capacity) * 100;
   }
 }
