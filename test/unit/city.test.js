@@ -14,7 +14,7 @@ test("Madrid has two airports", () => {
   expect(madrid.countAirports()).toBe(2);
 });
 
-test("Madrid had two visitants", () => {
+test("Madrid had tree visitants", () => {
   const madrid = new City("madrid");
   const anAirport = new Airport();
 
@@ -23,12 +23,13 @@ test("Madrid had two visitants", () => {
   //passenger
   const passOne = new Passenger("Leandro", "Benitez");
   const passTwo = new Passenger("Leo", "Benitez");
-
+  const passThree = new Passenger("Lesssdo", "Benitez");
   // agrego vuelos que arribaron al aeropuerto
   const flightOne = new Flight();
   const flightTwo = new Flight();
 
   flightOne.addPassenger(passOne);
+  flightOne.addPassenger(passThree);
   flightOne.setArrivalAirport(anAirport);
   flightOne.setArrivalDateTime("10");
 
@@ -39,5 +40,5 @@ test("Madrid had two visitants", () => {
   anAirport.addFlights(flightOne);
   anAirport.addFlights(flightTwo);
 
-  expect(madrid.cantidadPasajerosQueLlegaron("10")).toBe(2);
+  expect(madrid.cantidadPasajerosQueLlegaron("10")).toBe(3);
 });
