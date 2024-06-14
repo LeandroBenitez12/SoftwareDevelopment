@@ -12,14 +12,17 @@ export class City {
   countAirports() {
     return this.airports.length;
   }
-  cantPasajeLlegaronEl(dia){
+  cantPasajeLlegaronEl(dia) {
     let cantidad = 0;
 
-    this.airports.forEach(a => {
-      a.amountFlightsArrivedInTheDay(dia).forEach(v =>{
+    this.airports.forEach((a) => {
+      a.amountFlightsArrivedInTheDay(dia).forEach((v) => {
         cantidad += v.cantidadPasajeros();
       });
     });
+  }
+  tenesAeropuerto(unAeropuerto) {
+    return this.airports.includes(unAeropuerto);
   }
 }
 // testear
